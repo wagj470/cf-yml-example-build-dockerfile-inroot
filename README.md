@@ -1,1 +1,3 @@
 # cf-yml-example-build-dockerfile-inroot
+
+[![Codefresh build status]( https://g.codefresh.io/api/badges/build?repoOwner=codefreshdemo&repoName=cf-yml-example-build-dockerfile-inroot&branch=master&pipelineName=cf-yml-example-build-dockerfile-inroot&accountName=nikolai&type=cf-1)]( https://g.codefresh.io/repositories/codefreshdemo/cf-yml-example-build-dockerfile-inroot/builds?filter=trigger:build;branch:master;service:5837ff1016eae00100e50081~cf-yml-example-build-dockerfile-inroot)
