@@ -5,6 +5,6 @@ steps:
   build_prj:
     type: build
     description: Build an Image with the Dockerfile in Root Directory
-    image_name: codefreshio/yaml-example-docker-inroot
+    image_name: codefreshio/yaml-example-dockerfile-inroot
     dockerfile: Dockerfile
     tag: ${{CF_BRANCH}}
