@@ -1,42 +1,27 @@
-# Welcome
+# Example of building a docker image where the Dockerfile is on the root folder
 
-So, you've decided to try Codefresh? Welcome on board!
+This is a Git repository that holds a Node application and a Dockerfile. The dockerfile is also at the root folder of the project.
 
-Using this repository we'll help you get up to speed with basic functionality such as: *building Docker images*.
+## Packaging the Node.js app
 
-This project uses `Node JS` to build an application which will eventually become a distributable Docker image.
+To compile and package using Docker 
 
-## Looking around
-
-In the root of this repository you'll find a file named `codefresh.yml`, this is our [build descriptor](https://docs.codefresh.io/docs/what-is-the-codefresh-yaml) and it describes the different steps that comprise our process.
-Let's quickly review the contents of this file:
-
-### Building
-
-To bake our application into a Docker image we use Codefresh's [Build step](https://docs.codefresh.io/docs/steps#section-build).
-
-The Build is a simplified abstraction over the Docker build command.
-
-```yml
-build_image:
-    title: Building Image
-    type: build
-    #Important: rename this image to to a valid repository in your registry. For example: myUserName/vote
-    image_name: codefresh/example-dockerfile-inroot
-    #Dockerfile location should be relative to the working directory
-    dockerfile: Dockerfile
+```bash
+docker build . -t my-app 
 ```
 
-Use the `image_name` field to declare the name of the resulting image (don't forget to change the image owner name from `codefreshdemo` to your own!).
+## Running the docker image
 
-## Using This Example
+```bash
+docker run -p 3000:3000 my-app
+```
 
-To use this example:
+and then visit http://localhost:3000 in your browser
 
-* Fork this repository to your own [INSERT_SCM_SYSTEM (git, bitbucket)] account.
-* Log in to Codefresh using your [INSERT_SCM_SYSTEM (git, bitbucket)] account.
-* Click the `Add Service` button.
-* Select the forked repository.
-* Select the `I have a Codefresh.yml file` option.
-* Complete the wizard.
-* Rejoice!
+
+## To use this project in Codefresh
+
+There is also a [codefresh.yml](codefresh.yml) for easy usage with the [Codefresh](codefresh.io) CI/CD platform.
+
+More details can be found in [Codefresh documentation](https://codefresh.io/docs/docs/yaml-examples/examples/build-an-image-dockerfile-in-root-directory/).
+
